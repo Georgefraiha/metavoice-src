@@ -31,7 +31,9 @@ from fam.llm.utils import (
 )
 from fam.telemetry import TelemetryEvent
 from fam.telemetry.posthog import PosthogClient
+import torch._dynamo
 
+torch._dynamo.config.suppress_errors = True
 posthog = PosthogClient()  # see fam/telemetry/README.md for more information
 
 
